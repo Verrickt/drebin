@@ -51,9 +51,10 @@ def ParseArgs():
     Args.add_argument("--testsize", type= float, default= 0.3,
                       help= "Size of the test set when split by Scikit Learn's Train Test Split module")
     Args.add_argument("--model",
-                      help= "Absolute path to the saved model file(.pkl extension)")
+                      help= "Absolute path to the saved model file(.pkl extension)",default="model1.pkl")
     Args.add_argument("--numfeatforexp", type= int, default = 30,
                       help= "Number of top features to show for each test sample")
+    Args.add_argument("--maxfeaturesize",type = int,default = 100, help="The maximum number of features")
     return Args.parse_args()
 
 if __name__ == "__main__":

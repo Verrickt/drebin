@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer as TF
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import LinearSVC
@@ -76,7 +76,7 @@ def RandomClassification(MalwareCorpus, GoodwareCorpus, TestSize, FeatureOption,
         dump(Clf, filename + ".pkl")
     else:
         SVMModels = load(Model)
-        BestModel= SVMModels.best_estimator
+        BestModel= SVMModels.best_estimator_
 
     # step 4: Evaluate the best model on test set
     T0 = time.time()
